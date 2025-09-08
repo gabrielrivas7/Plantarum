@@ -24,6 +24,10 @@ https://drive.google.com/file/d/1rCEznDaOBpGUx54vkaFnAkUXZ0TG_Pgc/view?usp=shari
 
 https://drive.google.com/file/d/14RLlHPIGe82a2LmMyl9fHXz991MS45-k/view?usp=sharing
 
+4.-Procesos en la Dao de la Dapp
+
+https://drive.google.com/file/d/1uu8Zr5ReuM0yNg5KsCa3Ef8Rsb4gqygJ/view?usp=sharing
+
 ---
 
 ## 📑 Tabla de Contenidos
