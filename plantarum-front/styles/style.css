@@ -1,0 +1,15 @@
+.card {
+  background: #111;
+  border: 2px solid #22c55e;
+  border-radius: 12px;
+  padding: 16px;
+  color: #bbf7d0;
+  max-width: 280px;
+  margin: 8px; /* ← separación entre cards */
+}
+
+.row {
+  display: flex;
+  gap: 32px; /* ← separación horizontal */
+  margin-bottom: 16px; /* ← separación vertical entre filas */
+}

@@ -1,0 +1,65 @@
+{
+  "compilerOptions": {
+    /* ---------- Nivel de lenguaje ---------- */
+    "target": "ES2022", // ✅ Soporte BigInt nativo + features modernas
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "es2022"
+    ], // ✅ BigInt, async, Promise.allSettled, etc.
+    /* ---------- Módulos ---------- */
+    "module": "esnext", // ✅ Para Next.js App Router
+    "moduleResolution": "bundler", // ✅ Recomendado por Next 13/14
+    "resolveJsonModule": true, // ✅ Para importar ABIs JSON
+    "allowArbitraryExtensions": true, // ✅ Para .json/.ts/.tsx/.sol si los necesitas
+    /* ---------- Strict mode ---------- */
+    "strict": true, // ✅ Tipado estricto, mejor DX
+    "skipLibCheck": true, // ⚡ Evita errores en node_modules/@types
+    "noEmit": true, // ✅ No generar .js, solo usar TS como checker
+    "esModuleInterop": true, // ✅ Importación compatible con CommonJS/ESM
+    "isolatedModules": true, // ✅ Requerido por Next.js
+    /* ---------- JSX / React ---------- */
+    "jsx": "preserve",
+    "incremental": true,
+    /* ---------- Paths ---------- */
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "@/hooks/*": [
+        "./hooks/*"
+      ],
+      "@/abi/*": [
+        "./abi/*"
+      ],
+      "@/utils/*": [
+        "./utils/*"
+      ],
+      "@/context/*": [
+        "./src/context/*"
+      ]
+    },
+    /* ---------- Types ---------- */
+    "typeRoots": [
+      "./types",
+      "./node_modules/@types",
+      "./src/types"
+    ],
+    "allowJs": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

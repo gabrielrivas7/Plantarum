@@ -1,0 +1,396 @@
+/* src/app/globals.css */
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap");
+@import "tailwindcss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "JetBrains Mono", monospace;
+  background-color: #264E1C; /* gris medio */
+  color: #00ff9d; /* verde hacking */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Botones estilo hacking */
+button {
+  background-color: transparent;
+  border: 2px solid #00ff9d;
+  color: #00ff9d;
+  padding: 8px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+button:hover {
+  background-color: #00ff9d;
+  color: #1a1a1a;
+  box-shadow: 0 0 10px #00ff9d;
+}
+
+/* Links hacking */
+a {
+  color: #00ff9d;
+  text-decoration: none;
+  transition: color 0.2s, text-shadow 0.2s;
+}
+
+a:hover {
+  color: #00ffaa;
+  text-shadow: 0 0 5px #00ffaa;
+}
+
+/* Tarjetas generales */
+.card {
+  background: #1e1e1e; /* un gris más oscuro */
+  border: 1px solid #00ff9d;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 0 8px rgba(0, 255, 157, 0.2);
+  transition: all 0.2s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0 0 12px rgba(0, 255, 157, 0.6);
+}
+
+/* 🔹 Separación vertical entre filas de cards */
+.card-row {
+  margin-bottom: 12px; /* ~2-3 mm */
+}
+
+/* 🔹 Ajuste de cards */
+.card {
+  background: #111;
+  border: 2px solid #22c55e;
+  border-radius: 12px;
+  padding: 16px;
+  max-width: 280px;
+  color: #bbf7d0;
+  margin: 0 auto;
+}
+
+/* 🔹 Ajuste del texto dentro de la card */
+.card h3 {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.card p {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* 🔹 Menú superior: separación de links */
+.menu a {
+  margin: 0 14px;
+}
+/* 🔹 Ajuste de las filas de cards */
+.card-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;          /* separación horizontal */
+  margin-bottom: 8px; /* separación vertical entre filas */
+  justify-items: center;
+}
+
+/* 🔹 Estilo general de cards */
+.card {
+  background: #111;
+  border: 2px solid #22c55e;
+  border-radius: 12px;
+  padding: 16px;
+  max-width: 260px;
+  color: #bbf7d0;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* 🔹 Texto dentro de la card */
+.card-title {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.card-text {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* 🔹 Card Admin especial */
+.card-admin {
+  border-color: #ef4444;
+  color: #f87171;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Estilo para el menú superior */
+.navbar {
+  display: flex;
+  justify-content: center;   /* centra el menú */
+  align-items: center;
+  gap: 20px;                 /* 🚀 separación horizontal entre enlaces */
+  margin-bottom: 20px;       /* separación inferior respecto al contenido */
+}
+
+.navbar a {
+  color: #22c55e;            /* verde estilo Plantarum */
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #4ade80;            /* verde más claro al pasar el mouse */
+}
+
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1; /* Empuja al footer hacia abajo */
+  display: flex;
+  flex-direction: column;
+}
+
+/* ----- Layout Global Responsivo ----- */
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #264E1C;
+  color: #e5e7eb;
+}
+
+/* Contenedor principal */
+main {
+  padding: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Cards base */
+.card {
+  background: #1f2937;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 12px;
+  flex: 1;
+  transition: transform 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-3px);
+}
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #22c55e;
+  margin-bottom: 8px;
+}
+.card-text {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Filas de cards */
+.card-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* ----- Breakpoints ----- */
+
+/* Smartphones */
+@media (max-width: 480px) {
+  .card-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .card {
+    width: 100%;
+  }
+  h2 {
+    font-size: 1.4rem;
+  }
+}
+
+/* Tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+  .card-row {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .card {
+    width: calc(50% - 24px);
+  }
+  h2 {
+    font-size: 1.6rem;
+  }
+}
+
+/* Laptops */
+@media (min-width: 769px) and (max-width: 1280px) {
+  .card {
+    width: calc(45% - 24px);
+  }
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Desktop grandes */
+@media (min-width: 1281px) {
+  .card {
+    width: calc(30% - 24px);
+  }
+  h2 {
+    font-size: 2.2rem;
+  }
+}
+
+/* Botones verdes */
+.btn-green {
+  background-color: #10b981;
+  color: #111827;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.btn-green:hover {
+  background-color: #34d399;
+}
+
+/* Inputs */
+.input-dark {
+  background-color: #1f2937;
+  border: 1px solid #374151;
+  padding: 10px;
+  border-radius: 6px;
+  color: #e5e7eb;
+  width: 100%;
+}
+.input-dark:focus {
+  outline: none;
+  border-color: #10b981;
+}
+
+.map-wrapper {
+  width: 95vw;              /* panorámico */
+  max-width: 1600px;        /* límite opcional para pantallas enormes */
+  margin: 0 auto;           /* centrado horizontal */
+  border: 1px solid #065f46; /* verde oscuro tipo hacking forestal */
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(16, 185, 129, 0.3);
+}
+
+.map-wrapper .leaflet-container {
+  height: 600px;   /* altura vertical balanceada */
+  width: 100%;     /* ocupa todo el ancho del contenedor */
+}
+
+/* ===============================
+   🌱 Estilos comunes Plantarum
+   =============================== */
+
+/* ===============================
+   🌱 Estilos comunes Plantarum
+   =============================== */
+
+/* Tarjeta oscura */
+.card-dark {
+  background-color: #111827; /* gris muy oscuro */
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+  padding: 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+  border: 1px solid #374151; /* gris intermedio */
+}
+
+/* Tarjeta oscura con hover (marketplace) */
+.card-dark-hover {
+  background-color: #111827;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+  padding: 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+  border: 1px solid #374151;
+  transition: box-shadow 0.3s ease;
+}
+
+.card-dark-hover:hover {
+  box-shadow: 0 0 25px rgba(34, 197, 94, 0.6); /* verde más brillante */
+}
+
+/* Inputs */
+.input-dark {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background-color: #1f2937; /* gris oscuro */
+  color: #fff;
+  border: 1px solid #4b5563; /* gris intermedio */
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-dark::placeholder {
+  color: #9ca3af; /* gris claro */
+}
+
+.input-dark:focus {
+  border-color: #22c55e; /* verde */
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.5);
+}
+
+/* Botones */
+.btn-green {
+  width: 100%;
+  background-color: #16a34a; /* verde base */
+  color: #fff;
+  font-weight: bold;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.btn-green:hover {
+  background-color: #15803d; /* verde más oscuro */
+}
+
+.btn-green:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.6);
+}
+
+/* Textarea */
+textarea.input-dark {
+  resize: none;
+}
