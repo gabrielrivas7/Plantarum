@@ -7,7 +7,8 @@
 # 🌱 Plantarum – Ecosistema Blockchain Forestal
 
 Plantarum es un ecosistema **Web3** que tokeniza activos forestales y organiza su gestión mediante una **DAO federada basada en comités**.
-Integra protocolos innovadores que garantizan **georreferencia inmutable**, **trazabilidad total** y **gobernanza descentralizada**.
+Integra protocolos innovadores que garantizan **georreferencia inmutable**, **trazabilidad total** y **gobernanza descentralizada**. 
+https://plantarum.xyz en producción en las siguientes horas.
 
 ---
 
