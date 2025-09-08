@@ -153,7 +153,7 @@ Potencial internacional → conexión con APIs de certificación y mercados glob
 
 ---
 
-# 🌳 Protocolos Base
+# 🌳 Protocolos 
 
 Plantarum es un ecosistema Web3 para la **tokenización, trazabilidad y gobernanza DAO de activos forestales**, construido sobre Ethereum/Arbitrum.
 Su diseño se organiza en **5 protocolos nucleares**, cada uno modular, interoperable y preparado para la escalabilidad.
