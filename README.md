@@ -10,7 +10,9 @@ Plantarum es un ecosistema **Web3** que tokeniza activos forestales y organiza s
 Integra protocolos innovadores que garantizan **georreferencia inmutable**, **trazabilidad total** y **gobernanza descentralizada**. 
 https://plantarum.xyz en producción en las siguientes horas.
 
-Prueba Magistral: https://drive.google.com/file/d/11QbTYVdmxNSEC19jTwOZFwrH0Z5X737M/view?usp=sharing
+Pruebas Magistral: 
+https://drive.google.com/file/d/11QbTYVdmxNSEC19jTwOZFwrH0Z5X737M/view?usp=sharing
+https://drive.google.com/file/d/14RLlHPIGe82a2LmMyl9fHXz991MS45-k/view?usp=sharing
 ---
 
 ## 📑 Tabla de Contenidos
