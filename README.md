@@ -2,9 +2,6 @@
 
 ##Tokenización de Activos Forestales y Gestión Mediante Dao.##
 
-¡Perfecto 🚀!
-Entonces armamos un **README.md estructurado** que combine el briefing anterior (protocolos) con este de **tokenización + DAO federada**, todo en un formato llamativo para GitHub.
-
 ---
 
 # 🌱 Plantarum – Ecosistema Blockchain Forestal
