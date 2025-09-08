@@ -12,11 +12,12 @@ https://plantarum.xyz en producción en las siguientes horas.
 
 Pruebas Magistrales: 
 
-
 Tokenizando un Activo forestal para conservación:
+
 https://drive.google.com/file/d/11QbTYVdmxNSEC19jTwOZFwrH0Z5X737M/view?usp=sharing
 
 Tokenizando un activo forestal para comercio:
+
 https://drive.google.com/file/d/14RLlHPIGe82a2LmMyl9fHXz991MS45-k/view?usp=sharing
 ---
 
