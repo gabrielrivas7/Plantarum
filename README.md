@@ -44,6 +44,14 @@ https://drive.google.com/file/d/1dMAabjp3kshbWTBsaVjdncaCh5DZGXz1/view?usp=shari
 
 https://drive.google.com/file/d/1XnbSJnmrCJ4QSVnOr_qE7NCL-qobGLUv/view?usp=sharing
 
+9.-Configurando Fee  
+
+https://drive.google.com/file/d/1FPWQDn9Hu6bbX9olEOJA-KiUpVzWrHso/view?usp=sharing
+
+10.-Agregando Tokens
+
+https://drive.google.com/file/d/1Wf5_E3FCdG-Fs3HG7te68bzgHMFtd8iy/view?usp=sharing
+
 ---
 
 ## 📑 Tabla de Contenidos
