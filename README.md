@@ -220,7 +220,7 @@ https://drive.google.com/file/d/1Wf5_E3FCdG-Fs3HG7te68bzgHMFtd8iy/view?usp=shari
 ---
 
 📌    Plantarum combina:
-**🌲 Tokenización forestal  + 🗺️ Georreferencia inmutable + 🏛️ DAO federada + 🌍 Trazabilidad global. Protección - y Cumplimiento **
+**🌲 Tokenización forestal  + 🗺️ Georreferencia inmutable + 🏛️ DAO federada + 🌍 Trazabilidad global - Protección - y Cumplimiento **
 
 Estudiante:
 Abg. Gabriel Emilio de Jesús Rivas Mier y Terán
