@@ -73,13 +73,18 @@ https://drive.google.com/file/d/1Wf5_E3FCdG-Fs3HG7te68bzgHMFtd8iy/view?usp=shari
 
 ### 2️⃣ Protocolo de Pruebas de Reserva Forestal 🎲
 
-* Genera **reservas aleatorias** dentro de lotes tokenizados.
-* Incentiva la transparencia con **recompensas a usuarios** que validen.
+* Genera **auditorías aleatorias** sobre de activos tokenizados.
+* Incentiva la transparencia con **recompensas a usuarios** que validen activos.
 * Sirve como mecanismo anti-fraude y de auditoría continua.
+* La aletoriedad del sistema impide la colusión entre propiestarios y auditores
 
 ### 3️⃣ Protocolo de Tokenización Forestal 🌲
 
-* Cuatro vías de tokenización: conservación, bosques, carbono e industria.
+**Cuatro vías de tokenización:
+*1.-conservación: Tokenización de activos para trazabilidad de su conservación
+*2.-activos forestale in comercio: permite tokenizar la propiedad foresta para fines comerciales mejorando su acceseibilidad
+*3.-Emisión de Creditos de carbono para financiar proyectos de conservación
+*4.-tokenización de proyectos de explotación - industria forestal.
 * Uso de estándares **ERC-721 y ERC-1155**.
 * Metadatos híbridos: on-chain + off-chain (IPFS/Pinata).
 
@@ -88,6 +93,7 @@ https://drive.google.com/file/d/1Wf5_E3FCdG-Fs3HG7te68bzgHMFtd8iy/view?usp=shari
 * Garantiza integridad desde el árbol hasta el producto industrial.
 * Cada operación registra un **hash único** en blockchain.
 * Compatible con **mercados internacionales y auditorías**.
+* Su ubiciación geográfica garantiza seguir el rastro de los activos forestales
 
 ### 5️⃣ Protocolo de Gobernanza DAO 🌐
 
