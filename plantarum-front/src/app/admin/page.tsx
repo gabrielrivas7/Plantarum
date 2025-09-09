@@ -72,14 +72,14 @@ export default function AdminPage() {
           </Link>
         </div>
 
-        {/* Segunda fila con Carbon y Projects */}
+        {/* Segunda fila */}
         <div className="card-row">
           {isAdmin ? (
             <Link href="/admin/carbon" className="card">
               <div className="card-title">🌍 Créditos de Carbono</div>
               <p className="card-text">
                 Administra la tokenización de créditos de carbono:  
-                comisiones, monedas, y control de emisiones.
+                comisiones, monedas y control de emisiones.
               </p>
             </Link>
           ) : (
@@ -108,7 +108,28 @@ export default function AdminPage() {
             </div>
           )}
         </div>
+
+        {/* Tercera fila */}
+        <div className="card-row">
+          {isAdmin ? (
+            <Link href="/admin/protocolos" className="card">
+              <div className="card-title">📜 Protocolos</div>
+              <p className="card-text">
+                Accede y gestiona los protocolos de seguridad:  
+                KYC, RGPD, Reputación y PRF.
+              </p>
+            </Link>
+          ) : (
+            <div className="card card-admin">
+              <div className="card-title">📜 Protocolos</div>
+              <p className="card-text">
+                Acceso restringido. Solo disponible para administradores.
+              </p>
+            </div>
+          )}
+        </div>
       </div>
     </main>
   );
 }
+
