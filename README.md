@@ -32,35 +32,39 @@ https://drive.google.com/file/d/1FTYsKMjA6Q04F7t5Ifu3wZvhFfBkJKuR/view?usp=shari
 
 https://drive.google.com/file/d/1BE39zAheqORu6T1QP3TeU7a7HVEAXQIa/view?usp=sharing
 
-6.-Procesos en la Dao de la Dapp
+6.-Navegando los Ptocolos de seguridad de Plantarum
+
+https://drive.google.com/file/d/1iuQ5vUNz6Kh0eN9irhodlyl1vcpRLowx/view?usp=sharing
+
+7.-Procesos en la Dao de la Dapp
 
 https://drive.google.com/file/d/1uu8Zr5ReuM0yNg5KsCa3Ef8Rsb4gqygJ/view?usp=sharing
 
-7.-Prueba de Olvido Servicio RGPD
+8.-Prueba de Olvido Servicio RGPD
 
 https://drive.google.com/file/d/15zIZonAMHESoPO9oaYz3gwVSXdWVbM9M/view?usp=sharing
 
-8.-Sistema de Reputación
+9.-Sistema de Reputación
 
 https://drive.google.com/file/d/1Hhgv29fNK7ptqkL5WOYBhcv0mcUka1xW/view?usp=sharing
 
-9.-Registro Miembro Dao
+10.-Registro Miembro Dao
 
 https://drive.google.com/file/d/1dMAabjp3kshbWTBsaVjdncaCh5DZGXz1/view?usp=sharing
 
-10.-Navegando la Dapp
+11.-Navegando la Dapp
 
 https://drive.google.com/file/d/1XnbSJnmrCJ4QSVnOr_qE7NCL-qobGLUv/view?usp=sharing
 
-11.-Configurando Fee  
+12.-Configurando Fee  
 
 https://drive.google.com/file/d/1FPWQDn9Hu6bbX9olEOJA-KiUpVzWrHso/view?usp=sharing
 
-12.-Agregando Tokens por admin
+13.-Agregando Tokens por admin
 
 https://drive.google.com/file/d/1Wf5_E3FCdG-Fs3HG7te68bzgHMFtd8iy/view?usp=sharing
 
-13.-Agregando Tokens al Marketplace y Tesorería por Tesorería
+14.-Agregando Tokens al Marketplace y Tesorería por Tesorería
 
 https://drive.google.com/file/d/1JSdhm26SlYdG0KkDtRrZvC83ZlDFktaB/view?usp=sharing
 
