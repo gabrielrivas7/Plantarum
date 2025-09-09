@@ -1,10 +1,11 @@
 // src/app/treasury/history/page.tsx
+
 "use client";
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ethers, EventLog } from "ethers";
-import TreasuryABI from "../../../../abi/PlantarumTreasury.json" assert { type: "json" };
+import TreasuryABI from "../../../../abi/PlantarumTreasury.json";
 import addresses from "../../../../utils/addresses_eth";
 import { provider } from "../../../../utils/web3Config";
 
@@ -20,91 +21,73 @@ export default function TreasuryHistoryPage() {
   const [events, setEvents] = useState<EventItem[]>([]);
   const [loading, setLoading] = useState(false);
 
-  // 🔹 función para traer eventos en chunks
-  async function fetchEventsInChunks(
-    contract: ethers.Contract,
-    eventFilter: any,
-    fromBlock: number,
-    toBlock: number,
-    step = 2000 // tamaño del chunk (ajustable según RPC)
-  ) {
-    let logs: any[] = [];
-    for (let i = fromBlock; i <= toBlock; i += step) {
-      const end = Math.min(i + step - 1, toBlock);
-      const chunk = await contract.queryFilter(eventFilter, i, end);
-      logs = logs.concat(chunk);
-    }
-    return logs;
-  }
-
   async function loadHistory() {
     try {
       setLoading(true);
       const treasury = new ethers.Contract(TREASURY_ADDRESS, TreasuryABI, provider);
-
-      const currentBlock = await provider.getBlockNumber();
-      const fromBlock = currentBlock - 10000 > 0 ? currentBlock - 10000 : 0; // últimos 10k bloques
-
       const logs: EventItem[] = [];
 
       // 📥 Deposit
-      const deposits = await fetchEventsInChunks(
-        treasury,
-        treasury.filters.Deposit(),
-        fromBlock,
-        currentBlock
-      );
-      deposits.forEach((e) => {
+      const dep = await treasury.queryFilter(treasury.filters.Deposit());
+      dep.forEach((e) => {
         if ((e as EventLog).args) {
           const ev = e as EventLog;
-          const token = ev.args.token === ethers.ZeroAddress ? "ETH" : ev.args.token;
+          const token = ev.args.token;
+          const isETH = token === ethers.ZeroAddress;
           logs.push({
-            type: "💰 Depósito",
-            data: `De: ${ev.args.from} | Token: ${token} | Cantidad: ${ethers.formatUnits(
-              ev.args.amount,
-              18
-            )}`,
+            type: isETH ? "💰 Depósito ETH" : "💰 Depósito Token",
+            data: isETH
+              ? `De: ${ev.args.from} | Cantidad: ${ethers.formatEther(ev.args.amount)} ETH`
+              : `De: ${ev.args.from} | Token: ${token} | Cantidad: ${ethers.formatUnits(
+                  ev.args.amount,
+                  18
+                )}`,
             txHash: e.transactionHash,
           });
         }
       });
 
       // 📤 Withdraw
-      const withdraws = await fetchEventsInChunks(
-        treasury,
-        treasury.filters.Withdraw(),
-        fromBlock,
-        currentBlock
-      );
-      withdraws.forEach((e) => {
+      const wit = await treasury.queryFilter(treasury.filters.Withdraw());
+      wit.forEach((e) => {
         if ((e as EventLog).args) {
           const ev = e as EventLog;
-          const token = ev.args.token === ethers.ZeroAddress ? "ETH" : ev.args.token;
+          const token = ev.args.token;
+          const isETH = token === ethers.ZeroAddress;
           logs.push({
-            type: "🏦 Retiro",
-            data: `Para: ${ev.args.to} | Token: ${token} | Cantidad: ${ethers.formatUnits(
-              ev.args.amount,
-              18
-            )}`,
+            type: isETH ? "🏦 Retiro ETH" : "🏦 Retiro Token",
+            data: isETH
+              ? `Para: ${ev.args.to} | Cantidad: ${ethers.formatEther(ev.args.amount)} ETH`
+              : `Para: ${ev.args.to} | Token: ${token} | Cantidad: ${ethers.formatUnits(
+                  ev.args.amount,
+                  18
+                )}`,
+            txHash: e.transactionHash,
+          });
+        }
+      });
+
+      // 🪙 Token soportado
+      const sup = await treasury.queryFilter(treasury.filters.TokenSupported());
+      sup.forEach((e) => {
+        if ((e as EventLog).args) {
+          const ev = e as EventLog;
+          logs.push({
+            type: ev.args.status ? "🪙 Token Añadido" : "🪙 Token Removido",
+            data: `Token: ${ev.args.token}`,
             txHash: e.transactionHash,
           });
         }
       });
 
       // ⚡ MultiTransfer
-      const multiTransfers = await fetchEventsInChunks(
-        treasury,
-        treasury.filters.MultiTransfer(),
-        fromBlock,
-        currentBlock
-      );
-      multiTransfers.forEach((e) => {
+      const multi = await treasury.queryFilter(treasury.filters.MultiTransfer());
+      multi.forEach((e) => {
         if ((e as EventLog).args) {
           const ev = e as EventLog;
-          const token = ev.args.token === ethers.ZeroAddress ? "ETH" : ev.args.token;
           logs.push({
             type: "⚡ MultiTransfer",
-            data: `Token: ${token} | Total: ${ethers.formatUnits(
+            data: `Token: ${ev.args.token} | Total: ${ethers.formatUnits(
               ev.args.total,
               18
             )} | Destinatarios: ${ev.args.count}`,
@@ -113,11 +96,11 @@ export default function TreasuryHistoryPage() {
         }
       });
 
-      // Orden descendente (más recientes primero)
-      logs.reverse();
+      // Ordenar descendente por blockNumber
+      logs.sort((a, b) => (a.txHash < b.txHash ? 1 : -1));
       setEvents(logs);
     } catch (err) {
-      console.error("Error cargando historial:", err);
+      console.error("❌ Error cargando historial:", err);
     } finally {
       setLoading(false);
     }
@@ -128,16 +111,17 @@ export default function TreasuryHistoryPage() {
   }, []);
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-[75vh] px-6">
-      <h2 className="text-2xl font-bold mb-4 text-center">📜 Historial – Tesorería</h2>
+    <main className="p-10 min-h-screen bg-green-950">
+      <h2 className="text-2xl font-bold mb-6 text-center text-green-400">
+        📜 Historial – Tesorería
+      </h2>
       <p className="text-center max-w-2xl mb-12">
-        Revisa los últimos movimientos registrados en la Tesorería: depósitos, retiros 
-        y transferencias múltiples.
+        Movimientos registrados en la Tesorería: depósitos, retiros, tokens y transferencias múltiples.
       </p>
 
       {loading && <p className="text-green-400">⏳ Cargando eventos...</p>}
 
-      <div className="flex flex-col items-center w-full max-w-3xl">
+      <div className="flex flex-col items-center w-full max-w-3xl mx-auto">
         {events.length > 0 ? (
           events.map((ev, i) => (
             <div key={i} className="card w-full mb-4">
@@ -161,13 +145,13 @@ export default function TreasuryHistoryPage() {
         )}
       </div>
 
-      {/* Botón volver al Tesoro */}
-      <div className="mt-10">
+      {/* Botón volver */}
+      <div className="mt-10 flex justify-center">
         <Link
           href="/treasury"
           className="px-6 py-3 rounded-xl bg-green-800 hover:bg-green-700 text-white shadow-md"
         >
-          ← Volver al Tesoro
+          ← Volver a Tesoro
         </Link>
       </div>
     </main>

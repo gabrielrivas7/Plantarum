@@ -28,14 +28,33 @@ export default function CarbonPage() {
   const [txHash, setTxHash] = useState<string | null>(null);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
   ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     try {
+      // 🔎 Validaciones estrictas
+      if (!form.titulo.trim()) throw new Error("El título es obligatorio.");
+      if (!form.coords.trim())
+        throw new Error("Las coordenadas iniciales son obligatorias.");
+      if (form.coordsPoligono.trim() && !form.coords.trim())
+        throw new Error("Debes definir coordenadas base antes de los polígonos.");
+      if (!form.supply || isNaN(Number(form.supply)) || Number(form.supply) <= 0)
+        throw new Error("El supply debe ser un número válido mayor que 0.");
+      if (!form.moneda) throw new Error("Debes seleccionar una moneda.");
+      if (!form.price || isNaN(Number(form.price)) || Number(form.price) <= 0)
+        throw new Error("El precio unitario debe ser un número válido mayor que 0.");
+      if (!form.standard) throw new Error("Debes seleccionar un estándar.");
+      if (!form.expiryDate) throw new Error("Debes indicar la fecha de expiración.");
+      if (!form.certificadoCarbono)
+        throw new Error("Debes cargar un certificado de validación en PDF.");
+
       setLoading(true);
 
       // 1️⃣ Subir metadata off-chain
@@ -70,7 +89,9 @@ export default function CarbonPage() {
 
       const userAddress = await signer.getAddress();
       const hashId = crypto.randomUUID();
-      const expiryTimestamp = Math.floor(new Date(form.expiryDate).getTime() / 1000);
+      const expiryTimestamp = Math.floor(
+        new Date(form.expiryDate).getTime() / 1000
+      );
 
       // 3️⃣ Ejecutar mint
       const tx = await contract.mintCarbon(
@@ -79,10 +100,10 @@ export default function CarbonPage() {
         form.coords,
         tokenURI,
         parseInt(form.supply),
-        ethers.parseEther(form.price || "0"),
+        ethers.parseEther(form.price.toString()),
         form.standard,
         form.projectType,
-        parseInt(form.vintage),
+        parseInt(form.vintage || "1"),
         form.verificationBody,
         expiryTimestamp
       );
@@ -105,7 +126,8 @@ export default function CarbonPage() {
         🌍 Tokenizar Créditos de Carbono
       </h2>
       <p className="text-center text-green-200 mb-6">
-        Completa los campos para emitir créditos de carbono vinculados a estándares internacionales.
+        Completa los campos para emitir créditos de carbono vinculados a
+        estándares internacionales.
       </p>
 
       <div
@@ -187,6 +209,7 @@ export default function CarbonPage() {
             placeholder="💲 Precio unitario"
             className="input-dark"
             disabled={!form.moneda}
+            required
           />
 
           <select
@@ -210,6 +233,7 @@ export default function CarbonPage() {
             type="text"
             placeholder="Tipo de proyecto (ej. Reforestación, REDD+)"
             className="input-dark"
+            required
           />
 
           <input
@@ -221,6 +245,7 @@ export default function CarbonPage() {
             step="1"
             placeholder="Años de vigencia del crédito"
             className="input-dark"
+            required
           />
 
           <input
@@ -230,6 +255,7 @@ export default function CarbonPage() {
             type="text"
             placeholder="Entidad certificadora"
             className="input-dark"
+            required
           />
 
           <div
@@ -256,10 +282,13 @@ export default function CarbonPage() {
               onChange={(e) =>
                 setForm({
                   ...form,
-                  certificadoCarbono: e.target.files ? e.target.files[0] : null,
+                  certificadoCarbono: e.target.files
+                    ? e.target.files[0]
+                    : null,
                 })
               }
               style={{ display: "none" }}
+              required
             />
           </div>
 
@@ -269,6 +298,7 @@ export default function CarbonPage() {
             onChange={handleChange}
             type="date"
             className="input-dark"
+            required
           />
 
           <button type="submit" className="btn-green w-full mt-4">

@@ -1,47 +1,46 @@
-//src/app/treasury/balances/page.tsx
+// src/app/treasury/balance/page.tsx
 "use client";
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ethers } from "ethers";
-import { provider } from "../../../../utils/web3Config";
-import TreasuryABI from "../../../../abi/PlantarumTreasury.json" assert { type: "json" };
-import TokenABI from "../../../../abi/PlantarumToken.json" assert { type: "json" };
+import TreasuryABI from "../../../../abi/PlantarumTreasury.json";
 import addresses from "../../../../utils/addresses_eth";
+import { provider } from "../../../../utils/web3Config";
 
 const TREASURY_ADDRESS = addresses.PlantarumTreasury;
-const TOKEN_ADDRESS = addresses.PlantarumToken;
 
-export default function TreasuryBalancesPage() {
+export default function TreasuryBalancePage() {
   const [ethBalance, setEthBalance] = useState<string>("0");
-  const [plntxBalance, setPlntxBalance] = useState<string>("0");
-  const [tokens, setTokens] = useState<{ address: string; balance: string }[]>([]);
+  const [tokenBalances, setTokenBalances] = useState<{ token: string; balance: string }[]>([]);
+  const [loading, setLoading] = useState(false);
 
   async function loadBalances() {
     try {
+      setLoading(true);
       const treasury = new ethers.Contract(TREASURY_ADDRESS, TreasuryABI, provider);
 
       // ETH
-      const eth = await treasury.getETHBalance();
-      setEthBalance(ethers.formatEther(eth));
-
-      // PLNTX
-      const plntx = new ethers.Contract(TOKEN_ADDRESS, TokenABI, provider);
-      const plntxBal = await plntx.balanceOf(TREASURY_ADDRESS);
-      setPlntxBalance(ethers.formatUnits(plntxBal, 18));
+      const ethBal = await treasury.getETHBalance();
+      setEthBalance(ethers.formatEther(ethBal));
 
       // Tokens soportados
-      const supported = await treasury.getSupportedTokens();
-      const balances: { address: string; balance: string }[] = [];
-      for (const t of supported) {
-        if (t.toLowerCase() === TOKEN_ADDRESS.toLowerCase()) continue;
-        const erc20 = new ethers.Contract(t, TokenABI, provider);
-        const bal = await erc20.balanceOf(TREASURY_ADDRESS);
-        balances.push({ address: t, balance: ethers.formatUnits(bal, 18) });
+      const tokens: string[] = await treasury.getSupportedTokens();
+      const balances: { token: string; balance: string }[] = [];
+
+      for (const token of tokens) {
+        const bal = await treasury.getTokenBalance(token);
+        balances.push({
+          token,
+          balance: ethers.formatUnits(bal, 18),
+        });
       }
-      setTokens(balances);
+
+      setTokenBalances(balances);
     } catch (err) {
-      console.error("Error loading balances:", err);
+      console.error("❌ Error cargando balances:", err);
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -50,65 +49,38 @@ export default function TreasuryBalancesPage() {
   }, []);
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-[75vh] px-6">
-      <h2 className="text-2xl font-bold mb-4 text-center">📊 Balances – Tesorería</h2>
-      <p className="text-center max-w-2xl mb-12">
-        Consulta los saldos actuales de ETH, PLNTX y los tokens soportados en la Tesorería.
-        Estos balances se actualizan en tiempo real según las operaciones en la DApp.
-      </p>
+    <main className="p-10 min-h-screen bg-green-950">
+      <h2 className="text-2xl font-bold mb-6 text-center text-green-400">💰 Balances – Tesorería</h2>
 
-      <div className="flex flex-col items-center">
-        {/* Primera fila */}
-        <div className="card-row">
-          <div className="card">
-            <div className="card-title">⛽ ETH</div>
-            <p className="card-text">
-              Balance actual en Tesorería:{" "}
-              <span className="font-extrabold text-green-300">
-                {Number(ethBalance).toLocaleString("en-US")}
-              </span>
-            </p>
-          </div>
-          <div className="card">
-            <div className="card-title">🌲 PLNTX</div>
-            <p className="card-text">
-              Tokens de Tesorería:{" "}
-              <span className="font-extrabold text-green-300">
-                {Number(plntxBalance).toLocaleString("en-US")}
-              </span>
-            </p>
-          </div>
+      {loading && <p className="text-green-300">⏳ Cargando balances...</p>}
+
+      <div className="max-w-3xl mx-auto space-y-6">
+        <div className="bg-green-800/60 p-6 rounded-xl shadow border border-green-500/30">
+          <h3 className="text-green-300 font-semibold mb-2">ETH</h3>
+          <p className="text-green-100 text-lg">{ethBalance} ETH</p>
         </div>
 
-        {/* Segunda fila: tokens soportados */}
-        {tokens.length > 0 && (
-          <div className="card-row">
-            {tokens.map((t, i) => (
-              <div key={i} className="card">
-                <div className="card-title">🪙 ERC20 Token</div>
-                <p className="card-text">
-                  <span className="text-xs text-green-400/70">{t.address}</span>
-                  <br />
-                  Balance:{" "}
-                  <span className="font-extrabold text-green-300">
-                    {Number(t.balance).toLocaleString("en-US")}
-                  </span>
-                </p>
-              </div>
-            ))}
+        {tokenBalances.map((t, idx) => (
+          <div
+            key={idx}
+            className="bg-green-800/60 p-6 rounded-xl shadow border border-green-500/30"
+          >
+            <h3 className="text-green-300 font-semibold mb-2">Token</h3>
+            <p className="text-green-200 break-words">{t.token}</p>
+            <p className="text-green-100 text-lg mt-2">{t.balance}</p>
           </div>
-        )}
+        ))}
       </div>
-      {/* Botón volver al Tesoro */}
-      <div className="mt-10">
+
+      {/* Botón volver */}
+      <div className="mt-10 flex justify-center">
         <Link
           href="/treasury"
           className="px-6 py-3 rounded-xl bg-green-800 hover:bg-green-700 text-white shadow-md"
         >
-          ← Volver al Tesoro
+          ← Volver a Tesoro
         </Link>
       </div>
     </main>
   );
 }
-

@@ -1,5 +1,3 @@
-//src/app/token/natura/page.tsx
-
 "use client";
 
 import { useEffect, useState } from "react";
@@ -18,25 +16,24 @@ export default function NaturaPage() {
         if (!(window as any).ethereum) return;
 
         const provider = new ethers.BrowserProvider((window as any).ethereum);
-        const contract = new ethers.Contract(
-          addresses.Plantarum721,
-          Plantarum721ABI,
-          provider
-        );
+        const contract = new ethers.Contract(addresses.Plantarum721, Plantarum721ABI, provider);
 
-        // Obtener todos los tokens
         const ids: number[] = await contract.getAllTokens();
-
         const arr: any[] = [];
+
         for (const id of ids) {
-          const uri = await contract.tokenURI(id);
-          const url = uri.replace("ipfs://", "https://ipfs.io/ipfs/");
-          const res = await fetch(url);
-          const data = await res.json();
-          arr.push({ id, ...data });
+          try {
+            const uri = await contract.tokenURI(id);
+            const url = uri.replace("ipfs://", "https://ipfs.io/ipfs/");
+            const res = await fetch(url);
+            const data = await res.json();
+            arr.push({ id, ...data });
+          } catch {
+            console.warn(`⚠️ Token ${id} no existe o fue quemado → ignorado`);
+          }
         }
 
-        setTokens(arr.reverse()); // mostrar el más nuevo primero
+        setTokens(arr.reverse());
       } catch (err) {
         console.error("❌ Error cargando Natura:", err);
       } finally {
@@ -55,23 +52,17 @@ export default function NaturaPage() {
 
   return (
     <main className="p-10">
-      <h1 className="text-3xl font-extrabold text-green-500 text-center mb-10">
-        🌱 Natura – Activos de Conservación
-      </h1>
+      <h1 className="text-3xl font-extrabold text-green-500 text-center mb-10">🌱 Natura – Activos de Conservación</h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {tokens.map((t) => {
-          // Buscar la primera imagen (si hay)
-          const imageFile = t.files?.find(
-            (f: any) => f.type && f.type.startsWith("image/")
-          );
+          const imageFile = t.files?.find((f: any) => f.type && f.type.startsWith("image/"));
 
           return (
             <div
               key={t.id}
               className="relative bg-green-950 rounded-2xl shadow-lg shadow-green-800/50 border border-green-700 overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-green-500/50"
             >
-              {/* Imagen */}
               {imageFile ? (
                 <div className="relative">
                   <img
@@ -79,14 +70,11 @@ export default function NaturaPage() {
                     alt={t.titulo}
                     className="w-full h-48 object-cover border-b border-green-800"
                   />
-                  {/* Overlay linkeable */}
                   <Link
                     href={`/token/${t.id}`}
                     className="absolute inset-0 bg-green-900/40 opacity-0 hover:opacity-100 flex items-center justify-center transition-opacity duration-300"
                   >
-                    <span className="text-green-300 text-2xl font-bold">
-                      🌱 Ver Activo
-                    </span>
+                    <span className="text-green-300 text-2xl font-bold">🌱 Ver Activo</span>
                   </Link>
                 </div>
               ) : (
@@ -95,15 +83,10 @@ export default function NaturaPage() {
                 </div>
               )}
 
-              {/* Contenido */}
               <div className="p-5 text-center">
-                <h2 className="text-lg font-bold text-green-300 mb-1">
-                  {t.titulo}
-                </h2>
+                <h2 className="text-lg font-bold text-green-300 mb-1">{t.titulo}</h2>
                 <p className="text-green-400 text-sm">{t.comunidadAutonoma}</p>
-                <p className="text-green-500 text-xs font-mono mb-4">
-                  📍 {t.coords}
-                </p>
+                <p className="text-green-500 text-xs font-mono mb-4">📍 {t.coords}</p>
                 <Link
                   href={`/token/${t.id}`}
                   className="inline-block bg-green-700 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition"
@@ -118,4 +101,3 @@ export default function NaturaPage() {
     </main>
   );
 }
-

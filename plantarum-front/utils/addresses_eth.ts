@@ -16,7 +16,7 @@ const addresses = {
   PlantarumRgpd: "0x0FB333F44D73d5D99542900472C596843bf25b90",
   PlantarumReputation: "0x550ec3b27111cb6eb12492b5957d30e72b2836bb",
   PlantarumKyc:"0xdeb55d606bfb48a33e71a92f71e5d72b69b508d6",
-  PlantarumPrf:"ox..."
+  //PlantarumPrf:"ox..."
 };
 
 export default addresses;

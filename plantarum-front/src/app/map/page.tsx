@@ -24,7 +24,7 @@ if (typeof window !== "undefined") {
   const pinIcon = (file: string) =>
     new L.Icon({
       iconUrl: `/pins/${file}`,
-      iconSize: [25, 25], // 👈 tamaño base pequeño
+      iconSize: [25, 25],
       iconAnchor: [12, 25],
     });
 
@@ -36,14 +36,16 @@ if (typeof window !== "undefined") {
   };
 }
 
-// 🔄 Componente que actualiza el centro cuando cambia región
+
 function MapUpdater({ region }: { region: keyof typeof REGIONS }) {
   const map = useMap();
 
   useEffect(() => {
-    if (!map || !map.flyTo) return;
-    const { center, zoom } = REGIONS[region];
-    map.flyTo(center, zoom, { duration: 1.5 });
+    if (!map) return;
+    map.whenReady(() => {
+      const { center, zoom } = REGIONS[region];
+      map.flyTo(center, zoom, { duration: 1.5 });
+    });
   }, [region, map]);
 
   return null;
@@ -56,7 +58,7 @@ function ResponsiveIcons() {
   useEffect(() => {
     const updateIcons = () => {
       const zoom = map.getZoom();
-      const size = Math.min(Math.max(zoom * 2, 15), 50); // 👈 entre 15px y 50px
+      const size = Math.min(Math.max(zoom * 2, 15), 50);
 
       map.eachLayer((layer: any) => {
         if (layer instanceof L.Marker && layer.options.icon?.options.iconUrl) {
@@ -71,7 +73,7 @@ function ResponsiveIcons() {
     };
 
     map.on("zoomend", updateIcons);
-    updateIcons(); // inicial
+    updateIcons();
 
     return () => {
       map.off("zoomend", updateIcons);
@@ -120,25 +122,29 @@ export default function MapPage() {
         const results: any[] = [];
 
         for (const id of ids) {
-          const meta = await contract721.getTokenMeta(id);
-          const uri = await contract721.tokenURI(id);
+          try {
+            const meta = await contract721.getTokenMeta(id);
+            const uri = await contract721.tokenURI(id);
 
-          const url = uri.replace("ipfs://", "https://ipfs.io/ipfs/");
-          const res = await fetch(url);
-          const data = await res.json();
+            const url = uri.replace("ipfs://", "https://ipfs.io/ipfs/");
+            const res = await fetch(url);
+            const data = await res.json();
 
-          const [lat, lng] = meta.coords
-            .split(",")
-            .map((c: string) => parseFloat(c.trim()));
+            const [lat, lng] = meta.coords
+              .split(",")
+              .map((c: string) => parseFloat(c.trim()));
 
-          results.push({
-            id: id.toString(),
-            coords: [lat, lng] as [number, number],
-            type: data.type || "conservation",
-            titulo: data.titulo || "Proyecto",
-            estado: data.estadoLegal || "",
-            tokenURI: uri,
-          });
+            results.push({
+              id: id.toString(),
+              coords: [lat, lng] as [number, number],
+              type: data.type || "conservation",
+              titulo: data.titulo || "Proyecto",
+              estado: data.estadoLegal || "",
+              tokenURI: uri,
+            });
+          } catch (innerErr) {
+            console.warn(`⚠️ Error cargando token ${id}:`, innerErr);
+          }
         }
 
         setTokens(results);
@@ -180,12 +186,13 @@ export default function MapPage() {
       ) : (
         <div className="max-w-full mx-auto border border-green-700 rounded-xl overflow-hidden shadow-lg">
           <MapContainer
+            key={region} // 👈 evita reuso de instancias
             center={center}
             zoom={zoom}
             style={{ height: "650px", width: "100%" }}
           >
             <MapUpdater region={region} />
-            <ResponsiveIcons /> {/* 👈 ahora regula el tamaño dinámico */}
+            <ResponsiveIcons />
 
             <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
