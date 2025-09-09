@@ -138,6 +138,7 @@ https://drive.google.com/file/d/1Wf5_E3FCdG-Fs3HG7te68bzgHMFtd8iy/view?usp=shari
 3. **Carbono** → Supervisa créditos de carbono.
 4. **Industria** → Valida proyectos industriales.
 5. **Legal** → Control normativo y resolución de disputas.
+6. **CCAA** → Comités para cada Comunidad Autonómica
 
 ### 🔹 Características
 
