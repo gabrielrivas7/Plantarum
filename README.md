@@ -48,9 +48,13 @@ https://drive.google.com/file/d/1XnbSJnmrCJ4QSVnOr_qE7NCL-qobGLUv/view?usp=shari
 
 https://drive.google.com/file/d/1FPWQDn9Hu6bbX9olEOJA-KiUpVzWrHso/view?usp=sharing
 
-10.-Agregando Tokens
+10.-Agregando Tokens por admin
 
 https://drive.google.com/file/d/1Wf5_E3FCdG-Fs3HG7te68bzgHMFtd8iy/view?usp=sharing
+
+11.-Agregando Tokens al Marketplace y Tesorería por Tesorería
+
+https://drive.google.com/file/d/1JSdhm26SlYdG0KkDtRrZvC83ZlDFktaB/view?usp=sharing
 
 ---
 
