@@ -28,6 +28,22 @@ https://drive.google.com/file/d/14RLlHPIGe82a2LmMyl9fHXz991MS45-k/view?usp=shari
 
 https://drive.google.com/file/d/1uu8Zr5ReuM0yNg5KsCa3Ef8Rsb4gqygJ/view?usp=sharing
 
+5.-Prueba de Olvido Servicio RGPD
+
+https://drive.google.com/file/d/15zIZonAMHESoPO9oaYz3gwVSXdWVbM9M/view?usp=sharing
+
+6.-Sistema de Reputación
+
+https://drive.google.com/file/d/1Hhgv29fNK7ptqkL5WOYBhcv0mcUka1xW/view?usp=sharing
+
+7.-Registro Miembro Dao
+
+https://drive.google.com/file/d/1dMAabjp3kshbWTBsaVjdncaCh5DZGXz1/view?usp=sharing
+
+8.-Navegadndo la Dapp
+
+https://drive.google.com/file/d/1XnbSJnmrCJ4QSVnOr_qE7NCL-qobGLUv/view?usp=sharing
+
 ---
 
 ## 📑 Tabla de Contenidos
