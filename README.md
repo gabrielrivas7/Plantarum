@@ -28,6 +28,30 @@ https://drive.google.com/file/d/14RLlHPIGe82a2LmMyl9fHXz991MS45-k/view?usp=shari
 
 https://drive.google.com/file/d/1uu8Zr5ReuM0yNg5KsCa3Ef8Rsb4gqygJ/view?usp=sharing
 
+5.-Prueba de Olvido Servicio RGPD
+
+https://drive.google.com/file/d/15zIZonAMHESoPO9oaYz3gwVSXdWVbM9M/view?usp=sharing
+
+6.-Sistema de Reputación
+
+https://drive.google.com/file/d/1Hhgv29fNK7ptqkL5WOYBhcv0mcUka1xW/view?usp=sharing
+
+7.-Registro Miembro Dao
+
+https://drive.google.com/file/d/1dMAabjp3kshbWTBsaVjdncaCh5DZGXz1/view?usp=sharing
+
+8.-Navegando la Dapp
+
+https://drive.google.com/file/d/1XnbSJnmrCJ4QSVnOr_qE7NCL-qobGLUv/view?usp=sharing
+
+9.-Configurando Fee  
+
+https://drive.google.com/file/d/1FPWQDn9Hu6bbX9olEOJA-KiUpVzWrHso/view?usp=sharing
+
+10.-Agregando Tokens
+
+https://drive.google.com/file/d/1Wf5_E3FCdG-Fs3HG7te68bzgHMFtd8iy/view?usp=sharing
+
 ---
 
 ## 📑 Tabla de Contenidos
@@ -49,13 +73,18 @@ https://drive.google.com/file/d/1uu8Zr5ReuM0yNg5KsCa3Ef8Rsb4gqygJ/view?usp=shari
 
 ### 2️⃣ Protocolo de Pruebas de Reserva Forestal 🎲
 
-* Genera **reservas aleatorias** dentro de lotes tokenizados.
-* Incentiva la transparencia con **recompensas a usuarios** que validen.
+* Genera **auditorías aleatorias** sobre de activos tokenizados.
+* Incentiva la transparencia con **recompensas a usuarios** que validen activos.
 * Sirve como mecanismo anti-fraude y de auditoría continua.
+* La aletoriedad del sistema impide la colusión entre propiestarios y auditores
 
 ### 3️⃣ Protocolo de Tokenización Forestal 🌲
 
-* Cuatro vías de tokenización: conservación, bosques, carbono e industria.
+**Cuatro vías de tokenización:
+*1.-conservación: Tokenización de activos para trazabilidad de su conservación
+*2.-activos forestale in comercio: permite tokenizar la propiedad foresta para fines comerciales mejorando su acceseibilidad
+*3.-Emisión de Creditos de carbono para financiar proyectos de conservación
+*4.-tokenización de proyectos de explotación - industria forestal.
 * Uso de estándares **ERC-721 y ERC-1155**.
 * Metadatos híbridos: on-chain + off-chain (IPFS/Pinata).
 
@@ -64,6 +93,7 @@ https://drive.google.com/file/d/1uu8Zr5ReuM0yNg5KsCa3Ef8Rsb4gqygJ/view?usp=shari
 * Garantiza integridad desde el árbol hasta el producto industrial.
 * Cada operación registra un **hash único** en blockchain.
 * Compatible con **mercados internacionales y auditorías**.
+* Su ubiciación geográfica garantiza seguir el rastro de los activos forestales
 
 ### 5️⃣ Protocolo de Gobernanza DAO 🌐
 
@@ -114,6 +144,7 @@ https://drive.google.com/file/d/1uu8Zr5ReuM0yNg5KsCa3Ef8Rsb4gqygJ/view?usp=shari
 3. **Carbono** → Supervisa créditos de carbono.
 4. **Industria** → Valida proyectos industriales.
 5. **Legal** → Control normativo y resolución de disputas.
+6. **CCAA** → Comités para cada Comunidad Autonómica
 
 ### 🔹 Características
 
@@ -196,7 +227,7 @@ https://drive.google.com/file/d/1uu8Zr5ReuM0yNg5KsCa3Ef8Rsb4gqygJ/view?usp=shari
 ---
 
 📌    Plantarum combina:
-**🌲 Tokenización forestal  + 🗺️ Georreferencia inmutable + 🏛️ DAO federada + 🌍 Trazabilidad global. Protección - y Cumplimiento **
+**🌲 Tokenización forestal  + 🗺️ Georreferencia inmutable + 🏛️ DAO federada + 🌍 Trazabilidad global - Protección - y Cumplimiento **
 
 Estudiante:
 Abg. Gabriel Emilio de Jesús Rivas Mier y Terán
