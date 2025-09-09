@@ -24,35 +24,39 @@ https://drive.google.com/file/d/1rCEznDaOBpGUx54vkaFnAkUXZ0TG_Pgc/view?usp=shari
 
 https://drive.google.com/file/d/14RLlHPIGe82a2LmMyl9fHXz991MS45-k/view?usp=sharing
 
-4.-Procesos en la Dao de la Dapp
+4.-Tokenizando un proyecto de ampliación de aserradero
+
+https://drive.google.com/file/d/1FTYsKMjA6Q04F7t5Ifu3wZvhFfBkJKuR/view?usp=sharing
+
+5.-Procesos en la Dao de la Dapp
 
 https://drive.google.com/file/d/1uu8Zr5ReuM0yNg5KsCa3Ef8Rsb4gqygJ/view?usp=sharing
 
-5.-Prueba de Olvido Servicio RGPD
+6.-Prueba de Olvido Servicio RGPD
 
 https://drive.google.com/file/d/15zIZonAMHESoPO9oaYz3gwVSXdWVbM9M/view?usp=sharing
 
-6.-Sistema de Reputación
+7.-Sistema de Reputación
 
 https://drive.google.com/file/d/1Hhgv29fNK7ptqkL5WOYBhcv0mcUka1xW/view?usp=sharing
 
-7.-Registro Miembro Dao
+8.-Registro Miembro Dao
 
 https://drive.google.com/file/d/1dMAabjp3kshbWTBsaVjdncaCh5DZGXz1/view?usp=sharing
 
-8.-Navegando la Dapp
+9.-Navegando la Dapp
 
 https://drive.google.com/file/d/1XnbSJnmrCJ4QSVnOr_qE7NCL-qobGLUv/view?usp=sharing
 
-9.-Configurando Fee  
+10.-Configurando Fee  
 
 https://drive.google.com/file/d/1FPWQDn9Hu6bbX9olEOJA-KiUpVzWrHso/view?usp=sharing
 
-10.-Agregando Tokens por admin
+11.-Agregando Tokens por admin
 
 https://drive.google.com/file/d/1Wf5_E3FCdG-Fs3HG7te68bzgHMFtd8iy/view?usp=sharing
 
-11.-Agregando Tokens al Marketplace y Tesorería por Tesorería
+12.-Agregando Tokens al Marketplace y Tesorería por Tesorería
 
 https://drive.google.com/file/d/1JSdhm26SlYdG0KkDtRrZvC83ZlDFktaB/view?usp=sharing
 
