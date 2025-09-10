@@ -36,7 +36,7 @@ https://drive.google.com/file/d/1BE39zAheqORu6T1QP3TeU7a7HVEAXQIa/view?usp=shari
 
 https://drive.google.com/file/d/1xmKlYpmowTNYzGZcIHo5clzJ_jJzXaCK/view?usp=sharing
 
-7.-Navegando los Ptocolos de seguridad de Plantarum
+7.-Navegando los Protocolos de seguridad de Plantarum
 
 https://drive.google.com/file/d/1iuQ5vUNz6Kh0eN9irhodlyl1vcpRLowx/view?usp=sharing
 
