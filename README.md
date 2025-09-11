@@ -93,7 +93,7 @@ https://drive.google.com/file/d/1JSdhm26SlYdG0KkDtRrZvC83ZlDFktaB/view?usp=shari
 
 ### 2️⃣ Protocolo de Pruebas de Reserva Forestal 🎲
 
-* Genera **auditorías aleatorias** sobre de activos tokenizados.
+* Genera **auditorías aleatorias** sobre los activos tokenizados.
 * Incentiva la transparencia con **recompensas a usuarios** que validen activos.
 * Sirve como mecanismo anti-fraude y de auditoría continua.
 * La aletoriedad del sistema impide la colusión entre propiestarios y auditores
