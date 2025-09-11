@@ -1,4 +1,4 @@
-##Trabajo de Fin de Máster Universidad de Salamanca, España##
+## TRABAJO DE FIN DE MÁSTER DEL MÁSTER EN TECNOLOGÍA BLOCKCHAIN & SMART CONTRACTS DE LA UNIVERSIDAD DE SALAMANCA ##
 
 ##Tokenización de Activos Forestales y Gestión Mediante Dao.##
 
