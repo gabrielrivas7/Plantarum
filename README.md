@@ -249,5 +249,7 @@ https://drive.google.com/file/d/1JSdhm26SlYdG0KkDtRrZvC83ZlDFktaB/view?usp=shari
 📌    Plantarum combina:
 **🌲 Tokenización forestal  + 🗺️ Georreferencia inmutable + 🏛️ DAO federada + 🌍 Trazabilidad global - Protección - y Cumplimiento **
 
+📌📌📌 Nota Importante: el nombre plantarum es referencial al dominio plantarum.xyz que utiliza para poder alojar y ver el funcionamiento de la App en línea y se utiliza para fines educativos, para conceptualizar la idea de un TFM, NO es marca comercial, NI nombre definitivo, es referencial y se utilizo por la simple existencia y acceso al dominio plantarum.xyz para poder alojar el prototipo bajo un nombre referencial y poder mostrarlo funcionando. 
+
 Estudiante:
 Abg. Gabriel Emilio de Jesús Rivas Mier y Terán
