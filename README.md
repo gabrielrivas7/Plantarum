@@ -88,32 +88,32 @@ https://drive.google.com/file/d/1JSdhm26SlYdG0KkDtRrZvC83ZlDFktaB/view?usp=shari
 ### 1️⃣ Protocolo de Georreferencia Descentralizada 📍
 
 * Vincula cada activo forestal a coordenadas geográficas.
-* Las coords son almacenadas on-chain para **inmutabilidad geográfica**.
-* Permite visualización en mapas dentro de la DApp (Leaflet/OSM).
+* Las coords son almacenadas on-chain para su **inmutabilidad geográfica**.
+* Permite su visualización en mapas dentro de la DApp (OSM).
 
 ### 2️⃣ Protocolo de Pruebas de Reserva Forestal 🎲
 
 * Genera **auditorías aleatorias** sobre los activos tokenizados.
 * Incentiva la transparencia con **recompensas a usuarios** que validen activos.
 * Sirve como mecanismo anti-fraude y de auditoría continua.
-* La aletoriedad del sistema impide la colusión entre propiestarios y auditores
+* La aletoriedad del sistema impide la colusión entre propietarios y auditores
 
-### 3️⃣ Protocolo de Tokenización Forestal 🌲
+### 3️⃣ Protocolos de Tokenización Forestal 🌲
 
 **Cuatro vías de tokenización:
-*1.-conservación: Tokenización de activos para trazabilidad de su conservación
-*2.-activos forestale in comercio: permite tokenizar la propiedad foresta para fines comerciales mejorando su acceseibilidad
+*1.-conservación: Tokenización de activos para la trazabilidad de su conservación
+*2.-activos forestale in comercio: permite tokenizar la propiedad forestal para fines comerciales mejorando su acceseibilidad
 *3.-Emisión de Creditos de carbono para financiar proyectos de conservación
-*4.-tokenización de proyectos de explotación - industria forestal.
+*4.-tokenización de proyectos de: explotación - industria forestal.
 * Uso de estándares **ERC-721 y ERC-1155**.
-* Metadatos híbridos: on-chain + off-chain (IPFS/Pinata).
+* Metadatos híbridos: on-chain + off-chain (IPFS).
 
 ### 4️⃣ Protocolo de Trazabilidad Forestal 🔗
 
-* Garantiza integridad desde el árbol hasta el producto industrial.
+* Garantiza la integridad desde el árbol hasta el producto industrial.
 * Cada operación registra un **hash único** en blockchain.
 * Compatible con **mercados internacionales y auditorías**.
-* Su ubiciación geográfica garantiza seguir el rastro de los activos forestales
+* Su ubicación geográfica garantiza seguir el rastro de los activos forestales
 
 ### 5️⃣ Protocolo de Gobernanza DAO 🌐
 
@@ -164,7 +164,7 @@ https://drive.google.com/file/d/1JSdhm26SlYdG0KkDtRrZvC83ZlDFktaB/view?usp=shari
 3. **Carbono** → Supervisa créditos de carbono.
 4. **Industria** → Valida proyectos industriales.
 5. **Legal** → Control normativo y resolución de disputas.
-6. **CCAA** → Comités para cada Comunidad Autonómica
+6. **CCAA** → Comités para cada Comunidad Autonómica que así lo requieran los miembros forestales y autoridades de esa CCAA.
 
 ### 🔹 Características
 
