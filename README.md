@@ -130,6 +130,7 @@ https://drive.google.com/file/d/1JSdhm26SlYdG0KkDtRrZvC83ZlDFktaB/view?usp=shari
 * Representa áreas protegidas y proyectos ambientales.
 * Basados en NFT únicos con coordenadas, superficie, especies y documentación.
 * Garantiza intangibilidad y reconocimiento ambiental.
+* Fundamentan y hacen base a la emisión de Créditos de carbono.
 
 ### 🌳 2. Activos Forestales para el comercio y la industria
 
