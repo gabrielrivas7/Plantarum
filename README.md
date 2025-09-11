@@ -52,7 +52,7 @@ https://drive.google.com/file/d/15zIZonAMHESoPO9oaYz3gwVSXdWVbM9M/view?usp=shari
 
 https://drive.google.com/file/d/1Hhgv29fNK7ptqkL5WOYBhcv0mcUka1xW/view?usp=sharing
 
-11.-Registro Miembro Dao
+11.-Registro Miembro en la Dao
 
 https://drive.google.com/file/d/1dMAabjp3kshbWTBsaVjdncaCh5DZGXz1/view?usp=sharing
 
@@ -60,7 +60,7 @@ https://drive.google.com/file/d/1dMAabjp3kshbWTBsaVjdncaCh5DZGXz1/view?usp=shari
 
 https://drive.google.com/file/d/1XnbSJnmrCJ4QSVnOr_qE7NCL-qobGLUv/view?usp=sharing
 
-13.-Configurando Fee  
+13.-Configurando Fees  
 
 https://drive.google.com/file/d/1FPWQDn9Hu6bbX9olEOJA-KiUpVzWrHso/view?usp=sharing
 
@@ -88,7 +88,7 @@ https://drive.google.com/file/d/1JSdhm26SlYdG0KkDtRrZvC83ZlDFktaB/view?usp=shari
 ### 1️⃣ Protocolo de Georreferencia Descentralizada 📍
 
 * Vincula cada activo forestal a coordenadas geográficas.
-* Datos almacenados on-chain para **inmutabilidad geográfica**.
+* Las coords son almacenadas on-chain para **inmutabilidad geográfica**.
 * Permite visualización en mapas dentro de la DApp (Leaflet/OSM).
 
 ### 2️⃣ Protocolo de Pruebas de Reserva Forestal 🎲
